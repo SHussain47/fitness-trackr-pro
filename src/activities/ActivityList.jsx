@@ -35,7 +35,7 @@ function ActivityListItem({ activity, syncActivities }) {
   return (
     <li>
       <p>{activity.name}</p>
-      {token && <button onClick={tryDelete}>Delete</button>}
+      {/* {token && <button onClick={tryDelete}>Delete</button>} */}
       {error && <p role="alert">{error}</p>}
     </li>
   );

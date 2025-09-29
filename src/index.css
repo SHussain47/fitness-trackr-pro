@@ -12,7 +12,7 @@ main {
 }
 
 #root {
-  width: 45ch;
+  width: 50ch;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -44,4 +44,11 @@ ol {
 
 p[role="alert"] {
   color: red;
+}
+
+.link {
+  text-decoration: none;
+}
+.link.active {
+  text-decoration: underline;
 }
