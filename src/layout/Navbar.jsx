@@ -14,13 +14,11 @@ export default function Navbar() {
         <NavLink to="/ActivitiesPage" className={navClass}>
           Activities
         </NavLink>
-        <NavLink to="/" className={navClass}>
+        <NavLink to="/RoutinePage" className={navClass}>
           Routines
         </NavLink>
         {token ? (
-          <a onClick={() => logout()} className={navClass}>
-            Log out
-          </a>
+          <a onClick={() => logout()}>Log out</a>
         ) : (
           <>
             <NavLink to="/register" className={navClass}>

@@ -52,3 +52,16 @@ p[role="alert"] {
 .link.active {
   text-decoration: underline;
 }
+
+.list-item {
+  text-decoration: none;
+}
+
+.action-btns {
+  display: flex;
+  gap: 1rem;
+}
+.action-back,
+.action-delete {
+  width: 50%;
+}

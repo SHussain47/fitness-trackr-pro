@@ -7,11 +7,17 @@ import ActivityForm from "./ActivityForm";
 
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { token } = useAuth();
 
   const syncActivities = async () => {
-    const data = await getActivities();
-    setActivities(data);
+    setLoading(true);
+    try {
+      const data = await getActivities();
+      setActivities(data);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -21,7 +27,11 @@ export default function ActivitiesPage() {
   return (
     <>
       <h1>Activities</h1>
-      <ActivityList activities={activities} syncActivities={syncActivities} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ActivityList activities={activities} syncActivities={syncActivities} />
+      )}
       {token && <ActivityForm syncActivities={syncActivities} />}
     </>
   );

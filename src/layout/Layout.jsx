@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+
 import Navbar from "./Navbar";
 
 /** The shared layout for all pages of the app */
